@@ -16,9 +16,10 @@ BEGIN
     SELECT COUNT(*) INTO count_row FROM
     projects WHERE name = project_name;
 
-    -- CHECK IF THE project_name exist in the projects table
+    -- Check if the project_name exist in the projects table
     IF count_row = 0
     THEN
+        -- Insert into projects table
         INSERT INTO projects (name) VALUES (project_name);
     END IF;
 
